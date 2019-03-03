@@ -25,6 +25,18 @@ $navbar-default-bg: #ed9c38;
   color: #ed9c38;
 }
 
+.recipe-actions {
+  padding-top: 5px;
+// --> the SCSS way!
+  a {
+    color: white;
+  }
+}
+// --> just the same
+// .recipe-actions a {
+//   color: white;
+// }
+
 .colormatch a {
   color: #ed9c38;
 }
