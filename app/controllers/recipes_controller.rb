@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:edit, :show, :update]
+
 
   def index
     @recipes = Recipe.all
@@ -9,15 +11,12 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
       #handle this
       flash[:success] = "Recipe was updated succesfully!"
@@ -45,6 +44,10 @@ class RecipesController < ApplicationController
   end
 
   private
+
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
 
     def recipe_params
       params.require(:recipe).permit(:name, :description)
