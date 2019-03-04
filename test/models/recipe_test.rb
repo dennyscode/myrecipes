@@ -3,8 +3,7 @@ require 'test_helper'
 class RecipeTest < ActiveSupport::TestCase
 
   def setup
-    @chef = Chef.create!(chefname: "denny", email: "denny@example.com",
-                        password: "password", password_confirmation: "password")
+    @chef = Chef.create!(chefname: "denny", email: "denny@example.com", password: "password", password_confirmation: "password")
     @recipe = @chef.recipes.build(name: "Vegetable", description: "Great Vegetable Recipe!")
   end
 
@@ -35,6 +34,14 @@ class RecipeTest < ActiveSupport::TestCase
   test 'description should not be more than 500 characters' do
     @recipe.description = "a" * 501
     assert_not @recipe.valid?
+  end
+
+  test 'associated recipes shall be destroyed' do
+    @chef.save
+    @chef.recipes.create!(name: "Recipe testing to destroy", description: "Testing destroy function")
+    assert_difference "Recipe.count", -2 do
+      @chef.destroy
+    end
   end
 
 

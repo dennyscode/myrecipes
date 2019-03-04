@@ -19,7 +19,7 @@ class ChefsEditTest < ActionDispatch::IntegrationTest
   test 'accept valid signup' do
     get edit_chef_path(@chef)
     assert_template 'chefs/edit'
-    post chef_path(@chef), params: {chef: { chefname:"denny1", email: "denny1@test.de" } }
+    patch chef_path, params: {chef: { chefname:"denny1", email: "denny1@test.de" } }
     assert_redirected_to @chef
     assert_not flash.empty?
     @chef.reload

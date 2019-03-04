@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class ChefsSignupTest < ActionDispatch::IntegrationTest
+  def setup
+    @chef = Chef.create!(chefname: "DennyChef", email:"chefdenny@chef.com",password: "password", password_confirmation: "password")
+    @chef2 = Chef.create!(chefname: "Denny2Chef", email:"chef2denny@chef.com", password: "password", password_confirmation: "password")
+  end
 
   test 'should get signup path' do
     get signup_path
