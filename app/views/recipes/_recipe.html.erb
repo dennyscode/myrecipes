@@ -19,7 +19,14 @@
           </small>
         </span>
       </p>
-      <br>
+      <% if logged_in? && current_chef == recipe.chef %>
+        <div class="recipe-actions">
+        <%= link_to "Edit this Recipe", edit_recipe_path(recipe), class: "btn btn-xs btn-warning" %>
+        <%= link_to "Delete this Recipe", recipe_path(recipe), method: :delete,
+                    data: { confirm: "Are you sure you want to delete this recipe?" },
+                    class: "btn btn-xs btn-warning" %>
+        </div>
+      <% end %>
     </div><!-- end /col -->
   </div><!-- end /row -->
 <% end %>
