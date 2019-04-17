@@ -12,10 +12,15 @@
       <p>
         <%= truncate(recipe.description, length: 150) %>
       </p>
+      <% if recipe.ingredients.any? %>
+
+        <p>Ingredients: <%= render recipe.ingredients %></p>
+
+      <% end %>
       <p>
         <span class="quiet">
           <small>
-            Created <%= time_ago_in_words(recipe.created_at) %> ago
+            Created <%= time_ago_in_words(recipe.created_at) %> ago by <%= recipe.chef.chefname.capitalize %>
           </small>
         </span>
       </p>

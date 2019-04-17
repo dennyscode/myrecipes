@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # post '/recipes', to: 'recipes#create'
   get '/signup', to: "chefs#new"
   resources :chefs, except: [:new]
-
+  resources :ingredients, except: [:destroy]
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
