@@ -12,5 +12,3 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
     scrollToBottom()
     return
   
-  jQuery(document.on 'turbolink:load'), ->
-  scrollToBottom()

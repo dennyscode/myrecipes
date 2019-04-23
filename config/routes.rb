@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :comments, only: [:create]
+    member do
+      post 'like'
+    end
   end
   # get '/recipes', to: 'recipes#index'
   # get '/recipes/new', to: 'recipes#new', as: 'new_recipe'
