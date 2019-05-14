@@ -1,24 +1,30 @@
-# README
+This contains the "myrecipes" app to store recipes, add profiles, chat, rate and comment.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://fast-oasis-33184.herokuapp.com/
 
-Things you may want to cover:
 
-* Ruby version
+- Realtime Chatroom and Comments feature using ActionCable!
 
-* System dependencies
+- Rails 5 using free cloud-based Integrated Development Environment
 
-* Configuration
+- Working with git for version control and github as code repository
 
-* Database creation
+- Rails MVC structure in-depth - Models, Views, Controllers
 
-* Database initialization
+- Conceptualization and Design
 
-* How to run the test suite
+- Building own authentication system from scratch using default Rails stack, including admin feature, log in/logout and signup
 
-* Services (job queues, cache servers, search engines, etc.)
+- Working with Bootstrap for UI, Amazon Web Services for file/image hosting, Gravatars
 
-* Deployment instructions
+- Test Driven Development (TDD) for majority of the application, introduced very early on. Build automated test suite side-by-side with the app featuring model (unit) and feature (integration) tests with the default rails testing framework
 
-* ...
+- Model and non-model backed forms, implementing like/dislike voting feature
+
+- Migrations, one-to-many and many-to-many associations at the database layer and implementation using Rails and ActiveRecord
+
+- much, much more!
+
+
+The content was created when participating an Udemy course by Mashrur Hossain.
+https://www.udemy.com/pro-ruby-on-rails-rails5
